@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Lab7Test {
+public class Lab7Test {
     @Test
     void testAddition() {
         int result = 2 + 3;
