@@ -1,8 +1,11 @@
 name: Lab 7
-
 on:
   push:
+    branches:
+      - test
   pull_request:
+    branches:
+      - test
 
 jobs:
   test:
@@ -22,3 +25,11 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+
+      - name: Run backend tests
+        env:
+          MY_SECRET_KEY: ${{ secrets.MY_SECRET_KEY }}
+        run: ./gradlew test
+
+      - name: Generate JaCoCo Coverage Report
+        run: ./gradlew jacocoTestReport
