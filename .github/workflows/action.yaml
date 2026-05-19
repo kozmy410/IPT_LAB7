@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Build with Gradle
+      - name: Build with Gradle
         run: ./gradlew build
         
       - name: Run backend tests
